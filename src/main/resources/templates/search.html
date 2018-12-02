@@ -38,7 +38,35 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-</div>
 
+        <div th:fragment="job-display">
+            <h2 th:text="${jobs.size()+' Result(s)'}"></h2>
+
+            <table class="job-listing" th:each="job : ${jobs}">
+                <tr>
+                    <td>Position Type</td>
+                    <td th:text="${job.get('position type')}"/>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td th:text="${job.get('name')}"/>
+                </tr>
+                <tr>
+                    <td>Employer</td>
+                    <td th:text="${job.get('employer')}"/>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td th:text="${job.get('location')}"/>
+                </tr>
+                <tr>
+                    <td>Core Competency</td>
+                    <td th:text="${job.get('core competency')}"/>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
 </body>
 </html>
